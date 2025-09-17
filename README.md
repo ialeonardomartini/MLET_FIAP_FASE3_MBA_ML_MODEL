@@ -43,7 +43,6 @@ O modelo final utiliza XGBoost e alcança alta precisão na previsão de arremes
 
 ### 🤖 Modelagem de Machine Learning
 - Múltiplos algoritmos testados (XGBoost, Random Forest, etc.)
-- **Separação temporal realista**: Treino com temporadas 2022-23 e 2023-24, teste com 2024-25
 - Validação cruzada e otimização de hiperparâmetros
 - Métricas de avaliação detalhadas
 - Análise de importância das features
@@ -93,7 +92,7 @@ MLET_FIAP_FASE3_NBA_ML_MODEL/
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/MLET_FIAP_FASE3_NBA_ML_MODEL.git
+git clone https://github.com/ialeonardomartini/MLET_FIAP_FASE3_MBA_ML_MODEL.git
 cd MLET_FIAP_FASE3_NBA_ML_MODEL
 ```
 
@@ -121,7 +120,21 @@ pip install -r requirements.txt
 python configs/database_setup.py
 ```
 
-### 5. Gere os dados processados
+### 5. Colete os dados da NBA API
+
+**Importante:** Execute os scripts de coleta de dados antes de processar os notebooks.
+
+```bash
+# Coletar dados de arremessos (pode demorar várias horas)
+python src/collect_shotchart.py
+
+# Coletar dados de elencos
+python src/collect_roster.py
+```
+
+**Nota:** A coleta de dados pode demorar várias horas dependendo das temporadas selecionadas. Os scripts incluem delays para respeitar os limites da NBA API.
+
+### 6. Gere os dados processados
 
 **Importante:** Os arquivos de dados CSV são gerados automaticamente pelos notebooks. Execute os notebooks na ordem correta para gerar os dados necessários:
 
@@ -337,7 +350,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👥 Autores
 
-- **Leonardo Martini** - *Desenvolvimento Principal* - [GitHub](https://github.com/seu-usuario)
+- **Leonardo Martini** - *Desenvolvimento Principal* - [GitHub](https://github.com/ialeonardomartini)
 
 ## 🙏 Agradecimentos
 
@@ -349,8 +362,8 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 Para dúvidas ou sugestões, entre em contato:
 
-- Email: seu-email@exemplo.com
-- LinkedIn: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
+- Email: leonardormartini@gmail.com
+- LinkedIn: [Leonardo Rossi Martini](https://www.linkedin.com/in/leonardormartini/)
 
 ---
 
